@@ -1,0 +1,28 @@
+html
+	head
+		include head.pug
+		title User Profile for #{userA["username"]}
+	body
+		h1 Profile for #{userA["username"]}
+		if session
+			br
+			|Private Mode
+			br
+			input(type="radio", name="onoff", value = "on")
+			|On
+			br
+			input(type="radio", name="onoff", value = "off")
+			|Off
+			br
+			button#save(type='submit') Save
+			br
+		br
+		|Total Quiz: #{userA["total_quizzes"]}
+		br
+		br
+		|Total Score: #{average}
+		br
+		if session
+			br
+			a#logout(href="/logout") Log Out
+			script(src="/js/logout.js")

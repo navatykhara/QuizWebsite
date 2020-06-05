@@ -1,0 +1,9 @@
+html
+	head
+		include head.pug
+		title User Result
+	body
+		br
+		each user in users
+			a(href="/users/"+user["_id"]) #{user["username"]}
+			br

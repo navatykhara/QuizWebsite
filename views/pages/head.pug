@@ -1,0 +1,23 @@
+a(href='/') Home
+|
+|
+a(href='/quiz') Start Quiz
+|
+|
+a(href='/users') Users
+if !loggedin
+	div
+		br
+		|Username: 
+		input#username(type='text')
+		|Password:
+		input#password(type='text')
+		button#login(type='submit') Log In
+		script(src='/js/login.js')
+else
+	|
+	|
+	div
+		|Hello #{user["username"]}, 
+		a(href="/users/"+user["_id"]) click here to view your profile
+
